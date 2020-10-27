@@ -60,10 +60,12 @@ C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\bin\pt-br\System.Web.Razor.resou
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.Migrations.v1.resources
-C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.csproj.GenerateResource.cache
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.csproj.CoreCompileInputs.cache
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.csproj.CopyComplete
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.dll
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.pdb
 C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.csprojAssemblyReference.cache
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\bin\BookStore.Domain.dll
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\bin\BookStore.Domain.pdb
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.Migrations.v1.resources
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\obj\Debug\BookStore.csproj.GenerateResource.cache

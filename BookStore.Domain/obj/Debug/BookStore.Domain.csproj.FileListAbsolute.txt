@@ -1,0 +1,6 @@
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\BookStore.Domain\bin\Debug\BookStore.Domain.dll
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\BookStore.Domain\bin\Debug\BookStore.Domain.pdb
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\BookStore.Domain\obj\Debug\BookStore.Domain.csprojAssemblyReference.cache
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\BookStore.Domain\obj\Debug\BookStore.Domain.csproj.CoreCompileInputs.cache
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\BookStore.Domain\obj\Debug\BookStore.Domain.dll
+C:\Dev\dotNet\BaltaIO\Demo_AspNet_MVC\BookStore\BookStore.Domain\obj\Debug\BookStore.Domain.pdb
