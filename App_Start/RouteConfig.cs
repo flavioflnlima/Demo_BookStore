@@ -13,11 +13,13 @@ namespace BookStore
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.MapMvcAttributeRoutes();
+
+            //routes.maproute(
+            //    name: "default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "home", action = "index", id = urlparameter.optional }
+            //);
         }
     }
 }
