@@ -1,4 +1,5 @@
-﻿using BookStore.Domain;
+﻿using BookStore.Context;
+using BookStore.Domain;
 using BookStore.Repositories.Contracts;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace BookStore.Repositories
 {
     public class AuthorRepository : IAuthorRepository
     {
+        private BookStoreDataContext _db = new BookStoreDataContext();
         public void Create(Autor autor)
         {
             throw new NotImplementedException();
