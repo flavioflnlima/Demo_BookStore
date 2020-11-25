@@ -4,5 +4,6 @@ namespace BookStore.Filters
 {
     public class LogActionFilter : ActionFilterAttribute
     {
+
     }
 }
