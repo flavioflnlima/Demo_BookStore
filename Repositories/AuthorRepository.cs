@@ -3,47 +3,73 @@ using BookStore.Domain;
 using BookStore.Repositories.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 
 namespace BookStore.Repositories
 {
     public class AuthorRepository : IAuthorRepository
     {
-        private BookStoreDataContext _db = new BookStoreDataContext();
-        public void Create(Autor autor)
+        private BookStoreDataContext _db;
+
+        public AuthorRepository(BookStoreDataContext context)
         {
-            throw new NotImplementedException();
+            _db = context;
+        }
+        public bool Create(Autor autor)
+        {
+            try
+            {
+                _db.Autores.Add(autor);
+                _db.SaveChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
+            var autor = _db.Autores.Find(id);
+            _db.Autores.Remove(autor);
+            _db.SaveChanges();
         }
 
         public List<Autor> Get()
         {
-            throw new NotImplementedException();
+            return _db.Autores.ToList();
         }
 
         public Autor Get(int id)
         {
-            throw new NotImplementedException();
+            return _db.Autores.Find(id);
         }
 
-        public Autor GetByName(string name)
+        public List<Autor> GetByName(string name)
         {
-            throw new NotImplementedException();
+            return _db.Autores.Where(x => x.Nome.Contains(name)).ToList();
         }
 
-        public void Update(Autor autor)
+        public bool Update(Autor autor)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _db.Entry<Autor>(autor).State = EntityState.Modified;
+                _db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void Dispose()
+        {
+            _db.Dispose();
         }
     }
 }

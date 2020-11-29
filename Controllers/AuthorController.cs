@@ -1,14 +1,25 @@
-﻿using System.Web.Mvc;
+﻿using BookStore.Domain;
+using BookStore.Repositories;
+using BookStore.Repositories.Contracts;
+using System.Web.Mvc;
 
 namespace BookStore.Controllers
 {
     [RoutePrefix("autores")]
     public class AuthorController : Controller
     {
+        private IAuthorRepository _repository;
+
+        public AuthorController(IAuthorRepository repository)
+        {
+            _repository = repository;
+        }
+
         [Route("listar")]
         public ActionResult Index()
         {
-            return View();
+            var autores = _repository.Get();
+            return View(autores);
         }
 
         [Route("criar")]
@@ -17,18 +28,47 @@ namespace BookStore.Controllers
             return View();
         }
 
-        [Route("editar/{id:int}")]
-        public ActionResult Edit()
+        [Route("criar")]
+        [HttpPost]
+        public ActionResult Create(Autor author)
         {
-            return View();
+            if (_repository.Create(author))
+                return RedirectToAction("Index");
+
+            return View(author);
         }
 
+        [Route("editar/{id:int}")]
+        public ActionResult Edit(int id)
+        {
+            var author = _repository.Get(id);
+            return View(author);
+        }
+
+        [Route("editar/{id:int}")]
+        [HttpPost]
+        public ActionResult Edit(Autor author)
+        {
+            if (_repository.Update(author))
+                return RedirectToAction("Index");
+
+            return View(author);
+        }
+
+        [Route("excluir/{id:int}")]        
+        public ActionResult Delete(int id)
+        {
+            var author = _repository.Get(id);
+            return View(author);
+        }
 
         [Route("excluir/{id:int}")]
-        [Route()]
-        public ActionResult Delete()
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
         {
-            return View();
+            _repository.Delete(id);
+            return RedirectToAction("Index");
         }
 
     }
