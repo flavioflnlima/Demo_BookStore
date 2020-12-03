@@ -159,6 +159,7 @@
     <Compile Include="Repositories\AuthorRepository.cs" />
     <Compile Include="Repositories\Contracts\IAuthorRepository.cs" />
     <Compile Include="Repositories\Contracts\IBookRepository.cs" />
+    <Compile Include="Repositories\Contracts\IRepository.cs" />
     <Compile Include="ViewModels\VincularLivroAutorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
