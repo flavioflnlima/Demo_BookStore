@@ -7,7 +7,6 @@ namespace BookStore.ViewModels
     {
         [Required(ErrorMessage = "*")]
         public int AutorId { get; set; }
-
         [Required(ErrorMessage = "*")]
         public int LivroId { get; set; }
     }
