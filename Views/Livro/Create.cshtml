@@ -3,12 +3,16 @@
     ViewBag.Title = "Criando um Novo Livro";
 }
 
+@helper MinhaFuncao(string categoria)
+{
+    <text>Categoria Selecionada @categoria</text>
+}
+
 <h2>Novo Livro</h2>
 
-<form>
+@using (Html.BeginForm())
+{
     <div class="form-group">
-        @*<label for="exampleInputEmail1" class="form-label">Email address</label>*@
-        @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">*@
         @Html.LabelFor(model => model.Nome, new { htmlAttributes = new { @class = "form-label" } })
         @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
     </div>
@@ -20,7 +24,7 @@
         @Html.LabelFor(model => model.DataLancamento, new { htmlAttributes = new { @class = "form-label" } })
         @Html.EditorFor(model => model.DataLancamento, new { htmlAttributes = new { @class = "form-control" } })
     </div>
-    <div class="form-group">
+    <div class="form-group ">
         @Html.LabelFor(model => model.CategoriaId)
         @Html.DropDownListFor(
                     c => c.CategoriaId,
@@ -28,8 +32,9 @@
                     "Selecione a opção...",
                     new { htmlAttributes = new { @class = "form-control" } })
     </div>
+    <p>@MinhaFuncao(Model.CategoriaId.ToString())</p>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
