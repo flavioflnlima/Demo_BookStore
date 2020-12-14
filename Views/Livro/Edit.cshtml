@@ -1,18 +1,19 @@
 ﻿@model BookStore.ViewModels.EditorBookViewModel
 @{
-    ViewBag.Title = "Criando um Novo Livro";
+    ViewBag.Title = "Editando um Novo Livro";
 }
 
 @helper MinhaFuncao(string categoria)
 {
 }
 
-<h2>Novo Livro</h2>
+<h2>Edição de Livro</h2>
 
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(model => model.Id)
     @Html.Partial("Partials/EditorBookPartial", Model)
-    <button type="submit" class="btn btn-primary">Criar</button>
+    <button type="submit" class="btn btn-primary">Alterar</button>
 }
 
 @section Scripts {

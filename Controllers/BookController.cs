@@ -10,12 +10,12 @@ namespace BookStore.Api.Controllers
     //[RoutePrefix("api/public/v1")]
     public class BookController : Controller
     {
-        private IBookRepository _repository;
+        //private IBookRepository _repository;
 
-        public BookController(IBookRepository repository)
-        {
-            this._repository = repository;
-        }
+        //public BookController(IBookRepository repository)
+        //{
+        //    this._repository = repository;
+        //}
 
         #region Read
         //[HttpGet]
