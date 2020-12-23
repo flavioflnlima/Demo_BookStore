@@ -1,4 +1,5 @@
 ﻿using BookStore.Context;
+using BookStore.Domain;
 using BookStore.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
@@ -34,11 +35,18 @@ namespace BookStore.Controllers
         [HttpPost]
         public ActionResult Create(EditorBookViewModel model)
         {
-            return View();
+            var livro = new Livro();
+            livro.Nome = model.Nome;
+            livro.ISBN = model.ISBN;
+            livro.DataLancamento = model.DataLancamento;
+            livro.CategoriaId = model.CategoriaId;
+            _db.Livros.Add(livro);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [Route("editar")]
-        public ActionResult Create(int id)
+        public ActionResult Edit(int id)
         {
             var categorias = _db.Categorias.ToList();
             var livro = _db.Livros.Find(id);
@@ -50,6 +58,16 @@ namespace BookStore.Controllers
                 CategoriaOptions = new SelectList(categorias, "Id", "Nome")
             };
             return View(model);
+        }
+
+        [Route("editar")]
+        [HttpPost]
+        public ActionResult Edit(EditorBookViewModel model)
+        {
+            var livro = _db.Livros.Find(model.Id);
+            _db.Entry<Livro>(livro).State = System.Data.Entity.EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
