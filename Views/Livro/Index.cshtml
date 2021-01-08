@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
 }
 
 <h2>Index</h2>
@@ -10,4 +11,10 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@Html.Partial("Partial/ListBookPartial", Model)
+@Html.Partial("Partials/ListBookPartial", Model)
+
+@section menu{
+    <div>
+        Principal
+    </div>
+}

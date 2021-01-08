@@ -1,7 +1,6 @@
 ﻿@model BookStore.ViewModels.EditorBookViewModel
-@{
-    ViewBag.Title = "Criando um Novo Livro";
-}
+@{ ViewBag.Title = "Criando um Novo Livro";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml"; }
 
 @helper MinhaFuncao(string categoria)
 {
@@ -12,7 +11,15 @@
 @using (Html.BeginForm())
 {
     @Html.Partial("Partials/EditorBookPartial", Model)
-    <button type="submit" class="btn btn-primary">Criar</button>
+    <button type="submit" class="btn btn-primary">Criar</button>}
+
+@section menu{
+    <div>
+        Criação
+        <p>
+            <a href="@Url.Action("Index")">Voltar</a>
+        </p>
+    </div>
 }
 
 @section Scripts {

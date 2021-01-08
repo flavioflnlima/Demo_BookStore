@@ -1,4 +1,4 @@
-﻿@model BookStore.ViewModels.EditorBookViewModel
+﻿@model IEnumerable<BookStore.Domain.Livro>
 
 <table class="table">
     <tr>
@@ -38,6 +38,6 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
-    }
+}
 
 </table>
