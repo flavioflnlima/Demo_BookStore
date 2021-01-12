@@ -12,6 +12,7 @@
         @Html.ValidationMessage("Mensagem")
     </div>
     @Html.Partial("Partials/EditorBookPartial", Model)
+    @Html.EditorFor(x => x.Age)
     <button type="submit" class="btn btn-primary">Criar</button>
 }
 

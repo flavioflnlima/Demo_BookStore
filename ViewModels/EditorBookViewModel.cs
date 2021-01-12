@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStore.Validators;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -14,14 +15,17 @@ namespace BookStore.ViewModels
         [Required(ErrorMessage = "ISBN invalido")]
         public string ISBN { get; set; }
 
-        [Required(ErrorMessage = "Data de lançamento invalido")]
+        [Required(ErrorMessage = "Data de lançamento invalida")]
         [Display(Name = "Data de Lançamento")]
         [DataType(DataType.Date)]
         public DateTime DataLancamento { get; set; }
 
-        [Required(ErrorMessage = "Categoria invalido")]
+        [Required(ErrorMessage = "Selecione uma categoria")]
         [Display(Name = "Categoria")]
         public int CategoriaId { get; set; }
         public SelectList CategoriaOptions { get; set; }
+
+        [CheckAgeValidator]
+        public DateTime Age { get; set; }
     }
 }
