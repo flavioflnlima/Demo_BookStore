@@ -4,5 +4,5 @@ Demo de estudo do Entity Framework Core
   - DbContext
   - DattaAnnotations
   - Migrations
-  - Fluent API
+  - Fluent APIs
   - Scripts SQL idempotentes
